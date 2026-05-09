@@ -1,0 +1,51 @@
+body {
+    background-color: #f4f6f8;
+    font-family: Arial, sans-serif;
+}
+
+/* карточки */
+.card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    animation: fadeIn 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* кнопки */
+.btn {
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* фильтр */
+.filter-btn.active {
+    background: black;
+    color: white;
+}
+
+/* появление */
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* счётчик */
+.cart-bounce {
+    animation: bounce 0.4s;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
