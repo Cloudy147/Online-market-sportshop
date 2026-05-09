@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background:#f4f6f8;
+    font-family:Arial;
+}
+
+.container { max-width:1100px; }
+
+/* NAV */
+.navbar .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* карточки */
+.card {
+    border:none;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:translateY(-6px);
+}
+
+.card img {
+    height:280px;
+    width:100%;
+    object-fit:cover;
+}
+
+/* фильтр */
+.filter-btn.active {
+    background:black;
+    color:white;
+}
+
+/* бейдж */
+.cart-bounce {
+    animation: bounce 0.4s;
+}
+
+@keyframes bounce {
+    0% {transform:scale(1);}
+    50% {transform:scale(1.4);}
+    100% {transform:scale(1);}
+}
+
+/* летящий товар */
+.fly {
+    position:fixed;
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    object-fit:cover;
+    z-index:9999;
+    pointer-events:none;
+    transition: all 0.8s cubic-bezier(.2,.8,.2,1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-dark bg-dark">
+<div class="container">
+
+<a class="navbar-brand" href="index.html">SportShop</a>
+
+<div class="d-flex gap-2 align-items-center">
+
+<a class="btn btn-dark" href="index.html">Главная</a>
+<a class="btn btn-dark" href="catalog.html">Каталог</a>
+
+<a class="btn btn-warning position-relative" href="cart.html">
+🛒
+<span id="cartCount"
+class="position-absolute top-0 start-100 translate-middle badge bg-danger">0</span>
+</a>
+
+</div>
+</div>
+</nav>
+
+<!-- FILTER -->
+<div class="container mt-4 text-center">
+
+<button class="btn btn-dark filter-btn active" onclick="setFilter('all',this)">Все</button>
+<button class="btn btn-outline-dark filter-btn" onclick="setFilter('nike',this)">Nike</button>
+<button class="btn btn-outline-dark filter-btn" onclick="setFilter('adidas',this)">Adidas</button>
+<button class="btn btn-outline-dark filter-btn" onclick="setFilter('ua',this)">UA</button>
+<button class="btn btn-outline-dark filter-btn" onclick="setFilter('puma',this)">Puma</button>
+<button class="btn btn-outline-dark filter-btn" onclick="setFilter('reebok',this)">Reebok</button>
+<button class="btn btn-outline-dark filter-btn" onclick="setFilter('nb',this)">NB</button>
+
+</div>
+
+<!-- PRODUCTS -->
+<div class="container mt-4">
+<div class="row">
+
+<!-- NIKE -->
+<div class="col-md-4 mb-4 product nike">
+<div class="card">
+<img src="Images/nike.jpg">
+<div class="card-body text-center">
+<h5>Nike Air Max</h5>
+<p>120 AZN</p>
+<button class="btn btn-success mb-2" onclick="addToCart('Nike Air Max',120,this,'Images/nike.jpg')">В корзину</button>
+<br>
+<a class="btn btn-primary" href="product.html?name=Nike%20Air%20Max&price=120&img=Images/nike.jpg">Открыть</a>
+</div>
+</div>
+</div>
+
+<!-- ADIDAS -->
+<div class="col-md-4 mb-4 product adidas">
+<div class="card">
+<img src="Images/adidas.jpg">
+<div class="card-body text-center">
+<h5>Adidas Ultraboost</h5>
+<p>150 AZN</p>
+<button class="btn btn-success mb-2" onclick="addToCart('Adidas Ultraboost',150,this,'Images/adidas.jpg')">В корзину</button>
+<br>
+<a class="btn btn-primary" href="product.html?name=Adidas%20Ultraboost&price=150&img=Images/adidas.jpg">Открыть</a>
+</div>
+</div>
+</div>
+
+<!-- UA -->
+<div class="col-md-4 mb-4 product ua">
+<div class="card">
+<img src="Images/underarmour.jpg">
+<div class="card-body text-center">
+<h5>Under Armour</h5>
+<p>110 AZN</p>
+<button class="btn btn-success mb-2" onclick="addToCart('Under Armour',110,this,'Images/underarmour.jpg')">В корзину</button>
+<br>
+<a class="btn btn-primary" href="product.html?name=Under%20Armour&price=110&img=Images/underarmour.jpg">Открыть</a>
+</div>
+</div>
+</div>
+
+<!-- PUMA -->
+<div class="col-md-4 mb-4 product puma">
+<div class="card">
+<img src="Images/puma.jpg">
+<div class="card-body text-center">
+<h5>Puma RS-X</h5>
+<p>130 AZN</p>
+<button class="btn btn-success mb-2" onclick="addToCart('Puma RS-X',130,this,'Images/puma.jpg')">В корзину</button>
+<br>
+<a class="btn btn-primary" href="product.html?name=Puma%20RS-X&price=130&img=Images/puma.jpg">Открыть</a>
+</div>
+</div>
+</div>
+
+<!-- REEBOK -->
+<div class="col-md-4 mb-4 product reebok">
+<div class="card">
+<img src="Images/reebok.jpg">
+<div class="card-body text-center">
+<h5>Reebok Classic</h5>
+<p>115 AZN</p>
+<button class="btn btn-success mb-2" onclick="addToCart('Reebok Classic',115,this,'Images/reebok.jpg')">В корзину</button>
+<br>
+<a class="btn btn-primary" href="product.html?name=Reebok%20Classic&price=115&img=Images/reebok.jpg">Открыть</a>
+</div>
+</div>
+</div>
+
+<!-- NB -->
+<div class="col-md-4 mb-4 product nb">
+<div class="card">
+<img src="Images/nb.jpg">
+<div class="card-body text-center">
+<h5>New Balance 574</h5>
+<p>140 AZN</p>
+<button class="btn btn-success mb-2" onclick="addToCart('New Balance 574',140,this,'Images/nb.jpg')">В корзину</button>
+<br>
+<a class="btn btn-primary" href="product.html?name=New%20Balance%20574&price=140&img=Images/nb.jpg">Открыть</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+
+function getCart(){
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function saveCart(cart){
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCartCount(){
+    document.getElementById("cartCount").innerText = getCart().length;
+}
+
+// центр корзины
+function cartCenter(){
+    const el = document.getElementById("cartCount");
+    const r = el.getBoundingClientRect();
+    return {x:r.left + r.width/2, y:r.top + r.height/2};
+}
+
+// АНИМАЦИЯ
+function addToCart(name,price,btn,img){
+
+    let cart = getCart();
+    cart.push({name,price,img});
+    saveCart(cart);
+
+    updateCartCount();
+
+    const start = btn.getBoundingClientRect();
+    const end = cartCenter();
+
+    const fly = document.createElement("img");
+    fly.src = img;
+    fly.className = "fly";
+    document.body.appendChild(fly);
+
+    fly.style.left = start.left + "px";
+    fly.style.top = start.top + "px";
+
+    requestAnimationFrame(()=>{
+        const dx = end.x - start.left;
+        const dy = end.y - start.top;
+
+        fly.style.transform = `translate(${dx}px, ${dy}px) scale(0.2)`;
+        fly.style.opacity = "0";
+    });
+
+    setTimeout(()=>fly.remove(),800);
+
+    const badge = document.getElementById("cartCount");
+    badge.classList.add("cart-bounce");
+    setTimeout(()=>badge.classList.remove("cart-bounce"),400);
+}
+
+// FILTER
+function setFilter(type,btn){
+
+    document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    document.querySelectorAll(".product").forEach(p=>{
+        p.style.display = (type==="all" || p.classList.contains(type))
+        ? "block"
+        : "none";
+    });
+}
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>
