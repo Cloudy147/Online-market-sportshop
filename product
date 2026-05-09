@@ -2,6 +2,7 @@
 <html lang="ru">
 
 <head>
+    <a class="btn btn-outline-light" href="about.html">О нас</a>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Товар</title>
