@@ -33,12 +33,6 @@ body { background:#f4f6f8; font-family:Arial; }
     opacity:0;
 }
 
-.nav-actions {
-    display:flex;
-    gap:10px;
-    margin-bottom:20px;
-}
-
 .order-form {
     display:none;
     margin-top:20px;
@@ -48,7 +42,6 @@ body { background:#f4f6f8; font-family:Arial; }
     background:#fafafa;
 }
 
-/* карта */
 .card-fields {
     display:none;
     margin-top:10px;
@@ -59,18 +52,23 @@ body { background:#f4f6f8; font-family:Arial; }
 
 <body>
 
+<!-- NAV -->
 <nav class="navbar navbar-dark bg-dark">
 <div class="container">
+
 <a class="navbar-brand" href="index.html">SportShop</a>
+
+<!-- ТОЛЬКО ЭТО МЕНЮ ОСТАВИЛ -->
+<div class="d-flex gap-2">
+<a class="btn btn-outline-light" href="index.html">🏠 Главная</a>
+<a class="btn btn-outline-light" href="catalog.html">🛍 Каталог</a>
+<a class="btn btn-outline-light" href="about.html">ℹ️ О нас</a>
+</div>
+
 </div>
 </nav>
 
 <div class="box">
-
-<div class="nav-actions">
-<a class="btn btn-dark" href="index.html">🏠 Главная</a>
-<a class="btn btn-dark" href="catalog.html">🛍 Каталог</a>
-</div>
 
 <h2>🛒 Корзина</h2>
 
@@ -100,10 +98,9 @@ body { background:#f4f6f8; font-family:Arial; }
     <option value="card">Картой</option>
 </select>
 
-<!-- ДАННЫЕ КАРТЫ -->
 <div class="card-fields" id="cardFields">
 
-<input class="form-control mb-2" id="cardNumber" placeholder="Номер карты (1111 2222 3333 4444)">
+<input class="form-control mb-2" id="cardNumber" placeholder="Номер карты">
 <input class="form-control mb-2" id="cardDate" placeholder="Срок (MM/YY)">
 <input class="form-control mb-2" id="cardCvv" placeholder="CVV">
 
@@ -162,11 +159,7 @@ function toggleCard(){
 let method = document.getElementById("payment").value;
 let card = document.getElementById("cardFields");
 
-if(method === "card"){
-    card.style.display = "block";
-} else {
-    card.style.display = "none";
-}
+card.style.display = (method === "card") ? "block" : "none";
 }
 
 function confirmOrder(){
