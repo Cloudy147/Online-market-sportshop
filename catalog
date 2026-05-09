@@ -13,7 +13,9 @@ body {
     font-family:Arial;
 }
 
-.container { max-width:1100px; }
+.container {
+    max-width:1100px;
+}
 
 /* NAV */
 .navbar .container{
@@ -69,12 +71,42 @@ body {
     pointer-events:none;
     transition: all 0.8s cubic-bezier(.2,.8,.2,1);
 }
+
+/* SALE */
+.sale-badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:red;
+    color:white;
+    padding:5px 10px;
+    border-radius:10px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.card-wrapper{
+    position:relative;
+}
+
+/* цены */
+.sale-price{
+    color:red;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.old-price{
+    color:gray;
+    text-decoration:line-through;
+    margin-left:8px;
+    font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav class="navbar navbar-dark bg-dark">
 <div class="container">
 
@@ -84,6 +116,7 @@ body {
 
 <a class="btn btn-dark" href="index.html">Главная</a>
 <a class="btn btn-dark" href="catalog.html">Каталог</a>
+<a class="btn btn-dark" href="about.html">О нас</a>
 
 <a class="btn btn-warning position-relative" href="cart.html">
 🛒
@@ -119,9 +152,19 @@ class="position-absolute top-0 start-100 translate-middle badge bg-danger">0</sp
 <div class="card-body text-center">
 <h5>Nike Air Max</h5>
 <p>120 AZN</p>
-<button class="btn btn-success mb-2" onclick="addToCart('Nike Air Max',120,this,'Images/nike.jpg')">В корзину</button>
+
+<button class="btn btn-success mb-2"
+onclick="addToCart('Nike Air Max',120,this,'Images/nike.jpg')">
+В корзину
+</button>
+
 <br>
-<a class="btn btn-primary" href="product.html?name=Nike%20Air%20Max&price=120&img=Images/nike.jpg">Открыть</a>
+
+<a class="btn btn-primary"
+href="product.html?name=Nike%20Air%20Max&price=120&img=Images/nike.jpg">
+Открыть
+</a>
+
 </div>
 </div>
 </div>
@@ -133,23 +176,49 @@ class="position-absolute top-0 start-100 translate-middle badge bg-danger">0</sp
 <div class="card-body text-center">
 <h5>Adidas Ultraboost</h5>
 <p>150 AZN</p>
-<button class="btn btn-success mb-2" onclick="addToCart('Adidas Ultraboost',150,this,'Images/adidas.jpg')">В корзину</button>
+
+<button class="btn btn-success mb-2"
+onclick="addToCart('Adidas Ultraboost',150,this,'Images/adidas.jpg')">
+В корзину
+</button>
+
 <br>
-<a class="btn btn-primary" href="product.html?name=Adidas%20Ultraboost&price=150&img=Images/adidas.jpg">Открыть</a>
+
+<a class="btn btn-primary"
+href="product.html?name=Adidas%20Ultraboost&price=150&img=Images/adidas.jpg">
+Открыть
+</a>
+
 </div>
 </div>
 </div>
 
-<!-- UA -->
+<!-- UA (SALE) -->
 <div class="col-md-4 mb-4 product ua">
-<div class="card">
+<div class="card card-wrapper">
+<span class="sale-badge">SALE</span>
+
 <img src="Images/underarmour.jpg">
 <div class="card-body text-center">
 <h5>Under Armour</h5>
-<p>110 AZN</p>
-<button class="btn btn-success mb-2" onclick="addToCart('Under Armour',110,this,'Images/underarmour.jpg')">В корзину</button>
+
+<p>
+<span class="sale-price">95 AZN</span>
+<span class="old-price">110 AZN</span>
+</p>
+
+<button class="btn btn-success mb-2"
+onclick="addToCart('Under Armour',95,this,'Images/underarmour.jpg')">
+В корзину
+</button>
+
 <br>
-<a class="btn btn-primary" href="product.html?name=Under%20Armour&price=110&img=Images/underarmour.jpg">Открыть</a>
+
+<a class="btn btn-primary"
+href="product.html?name=Under%20Armour&price=95&img=Images/underarmour.jpg">
+Открыть
+</a>
+
 </div>
 </div>
 </div>
@@ -161,37 +230,79 @@ class="position-absolute top-0 start-100 translate-middle badge bg-danger">0</sp
 <div class="card-body text-center">
 <h5>Puma RS-X</h5>
 <p>130 AZN</p>
-<button class="btn btn-success mb-2" onclick="addToCart('Puma RS-X',130,this,'Images/puma.jpg')">В корзину</button>
+
+<button class="btn btn-success mb-2"
+onclick="addToCart('Puma RS-X',130,this,'Images/puma.jpg')">
+В корзину
+</button>
+
 <br>
-<a class="btn btn-primary" href="product.html?name=Puma%20RS-X&price=130&img=Images/puma.jpg">Открыть</a>
+
+<a class="btn btn-primary"
+href="product.html?name=Puma%20RS-X&price=130&img=Images/puma.jpg">
+Открыть
+</a>
+
 </div>
 </div>
 </div>
 
-<!-- REEBOK -->
+<!-- REEBOK (SALE) -->
 <div class="col-md-4 mb-4 product reebok">
-<div class="card">
+<div class="card card-wrapper">
+<span class="sale-badge">SALE</span>
+
 <img src="Images/reebok.jpg">
 <div class="card-body text-center">
 <h5>Reebok Classic</h5>
-<p>115 AZN</p>
-<button class="btn btn-success mb-2" onclick="addToCart('Reebok Classic',115,this,'Images/reebok.jpg')">В корзину</button>
+
+<p>
+<span class="sale-price">89 AZN</span>
+<span class="old-price">115 AZN</span>
+</p>
+
+<button class="btn btn-success mb-2"
+onclick="addToCart('Reebok Classic',89,this,'Images/reebok.jpg')">
+В корзину
+</button>
+
 <br>
-<a class="btn btn-primary" href="product.html?name=Reebok%20Classic&price=115&img=Images/reebok.jpg">Открыть</a>
+
+<a class="btn btn-primary"
+href="product.html?name=Reebok%20Classic&price=89&img=Images/reebok.jpg">
+Открыть
+</a>
+
 </div>
 </div>
 </div>
 
-<!-- NB -->
+<!-- NB (SALE) -->
 <div class="col-md-4 mb-4 product nb">
-<div class="card">
+<div class="card card-wrapper">
+<span class="sale-badge">SALE</span>
+
 <img src="Images/nb.jpg">
 <div class="card-body text-center">
 <h5>New Balance 574</h5>
-<p>140 AZN</p>
-<button class="btn btn-success mb-2" onclick="addToCart('New Balance 574',140,this,'Images/nb.jpg')">В корзину</button>
+
+<p>
+<span class="sale-price">119 AZN</span>
+<span class="old-price">140 AZN</span>
+</p>
+
+<button class="btn btn-success mb-2"
+onclick="addToCart('New Balance 574',119,this,'Images/nb.jpg')">
+В корзину
+</button>
+
 <br>
-<a class="btn btn-primary" href="product.html?name=New%20Balance%20574&price=140&img=Images/nb.jpg">Открыть</a>
+
+<a class="btn btn-primary"
+href="product.html?name=New%20Balance%20574&price=119&img=Images/nb.jpg">
+Открыть
+</a>
+
 </div>
 </div>
 </div>
@@ -213,20 +324,27 @@ function updateCartCount(){
     document.getElementById("cartCount").innerText = getCart().length;
 }
 
-// центр корзины
 function cartCenter(){
     const el = document.getElementById("cartCount");
     const r = el.getBoundingClientRect();
-    return {x:r.left + r.width/2, y:r.top + r.height/2};
+
+    return {
+        x:r.left + r.width/2,
+        y:r.top + r.height/2
+    };
 }
 
-// АНИМАЦИЯ
 function addToCart(name,price,btn,img){
 
     let cart = getCart();
-    cart.push({name,price,img});
-    saveCart(cart);
 
+    cart.push({
+        name,
+        price: Number(price),
+        img
+    });
+
+    saveCart(cart);
     updateCartCount();
 
     const start = btn.getBoundingClientRect();
@@ -241,28 +359,33 @@ function addToCart(name,price,btn,img){
     fly.style.top = start.top + "px";
 
     requestAnimationFrame(()=>{
-        const dx = end.x - start.left;
-        const dy = end.y - start.top;
 
-        fly.style.transform = `translate(${dx}px, ${dy}px) scale(0.2)`;
+        fly.style.transform =
+        `translate(${end.x - start.left}px, ${end.y - start.top}px) scale(0.2)`;
+
         fly.style.opacity = "0";
+
     });
 
     setTimeout(()=>fly.remove(),800);
 
     const badge = document.getElementById("cartCount");
     badge.classList.add("cart-bounce");
+
     setTimeout(()=>badge.classList.remove("cart-bounce"),400);
 }
 
-// FILTER
 function setFilter(type,btn){
 
-    document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".filter-btn")
+    .forEach(b=>b.classList.remove("active"));
+
     btn.classList.add("active");
 
-    document.querySelectorAll(".product").forEach(p=>{
-        p.style.display = (type==="all" || p.classList.contains(type))
+    document.querySelectorAll(".product")
+    .forEach(p=>{
+        p.style.display =
+        (type==="all" || p.classList.contains(type))
         ? "block"
         : "none";
     });
