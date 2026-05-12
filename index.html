@@ -11,37 +11,60 @@
 <style>
 
 body{
-    font-family: Arial;
-    background: #f4f6f8;
+    font-family:Arial;
+    background:#f4f6f8;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    padding:15px 0;
+}
+
+.nav-btn{
+    min-width:120px;
+    text-align:center;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-2px);
 }
 
 /* HERO */
+
 .hero{
-    background: linear-gradient(135deg, #111, #333);
+    background:linear-gradient(135deg,#111,#333);
     color:white;
-    padding: 90px 20px;
+    padding:90px 20px;
     text-align:center;
-    border-radius: 0 0 30px 30px;
+    border-radius:0 0 30px 30px;
 }
 
 .hero h1{
-    font-size: 48px;
-    font-weight: bold;
+    font-size:48px;
+    font-weight:bold;
 }
 
 .hero p{
-    font-size: 18px;
-    opacity: 0.8;
+    font-size:18px;
+    opacity:0.85;
 }
 
-/* кнопка */
+/* MAIN BUTTON */
+
 .btn-main{
-    padding: 12px 25px;
-    border-radius: 12px;
-    font-weight: bold;
+    padding:12px 25px;
+    border-radius:12px;
+    font-weight:bold;
 }
 
-/* карточки */
+/* PRODUCT CARD */
+
 .product-card{
     background:white;
     border-radius:16px;
@@ -51,7 +74,7 @@ body{
 }
 
 .product-card:hover{
-    transform: translateY(-6px);
+    transform:translateY(-6px);
 }
 
 .product-card img{
@@ -60,7 +83,8 @@ body{
     object-fit:cover;
 }
 
-/* скидка */
+/* SALE */
+
 .sale-price{
     color:red;
     font-weight:bold;
@@ -74,7 +98,8 @@ body{
     font-size:14px;
 }
 
-/* feature */
+/* FEATURE */
+
 .feature{
     background:white;
     padding:20px;
@@ -85,10 +110,11 @@ body{
 }
 
 .feature:hover{
-    transform: translateY(-5px);
+    transform:translateY(-5px);
 }
 
 /* FOOTER */
+
 footer{
     background:#111;
     color:white;
@@ -110,16 +136,29 @@ footer a:hover{
 
 <!-- NAV -->
 <nav class="navbar navbar-dark bg-dark">
-<div class="container">
+<div class="container d-flex justify-content-between align-items-center">
 
-<a class="navbar-brand" href="index.html">SportShop</a>
+<a class="navbar-brand fw-bold fs-4" href="index.html">
+SportShop
+</a>
 
-<div class="d-flex gap-2">
+<div class="d-flex gap-2 flex-wrap">
 
-<a class="btn btn-outline-light" href="index.html">Главная</a>
-<a class="btn btn-outline-light" href="catalog.html">Каталог</a>
-<a class="btn btn-outline-light" href="about.html">О нас</a>
-<a class="btn btn-warning" href="cart.html">🛒 Корзина</a>
+<a class="btn btn-outline-light nav-btn" href="index.html">
+Главная
+</a>
+
+<a class="btn btn-outline-light nav-btn" href="catalog.html">
+Каталог
+</a>
+
+<a class="btn btn-outline-light nav-btn" href="about.html">
+О нас
+</a>
+
+<a class="btn btn-warning nav-btn" href="cart.html">
+🛒 Корзина
+</a>
 
 </div>
 
@@ -128,128 +167,205 @@ footer a:hover{
 
 <!-- HERO -->
 <div class="hero">
+
 <h1>SportShop</h1>
-<p>Лучшие кроссовки и спортивная одежда</p>
-<a href="catalog.html" class="btn btn-light btn-main mt-3">Перейти в каталог</a>
+
+<p>
+Лучшие кроссовки и спортивная одежда
+</p>
+
+<a href="catalog.html" class="btn btn-light btn-main mt-3">
+Перейти в каталог
+</a>
+
 </div>
 
 <!-- FEATURES -->
 <div class="container mt-5">
-<div class="row g-3">
+
+<div class="row g-4">
 
 <div class="col-md-4">
 <div class="feature">
+
 <h5>🔥 Новые коллекции</h5>
-<p>Каждую неделю обновление товаров</p>
+
+<p>
+Каждую неделю обновление товаров
+</p>
+
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="feature">
+
 <h5>🚚 Быстрая доставка</h5>
-<p>Доставка за 24 часа</p>
+
+<p>
+Доставка за 24 часа
+</p>
+
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="feature">
+
 <h5>💳 Оплата</h5>
-<p>Наличные и карта</p>
+
+<p>
+Наличные и карта
+</p>
+
 </div>
 </div>
 
 </div>
+
 </div>
 
 <!-- SALE -->
 <div class="container mt-5">
 
-<h2 class="text-center mb-4">🔥 Скидки</h2>
+<h2 class="text-center mb-4">
+🔥 Скидки
+</h2>
 
 <div class="row g-4">
 
 <div class="col-md-4">
 <div class="product-card">
+
 <img src="Images/reebok.jpg">
+
 <div class="p-3 text-center">
+
 <h5>Reebok Classic</h5>
+
 <p>
 <span class="sale-price">89 AZN</span>
 <span class="old-price">115 AZN</span>
 </p>
-<a href="catalog.html" class="btn btn-danger">Купить</a>
+
+<a href="catalog.html" class="btn btn-danger">
+Купить
+</a>
+
 </div>
+
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="product-card">
+
 <img src="Images/nb.jpg">
+
 <div class="p-3 text-center">
+
 <h5>New Balance 574</h5>
+
 <p>
 <span class="sale-price">119 AZN</span>
 <span class="old-price">140 AZN</span>
 </p>
-<a href="catalog.html" class="btn btn-danger">Купить</a>
+
+<a href="catalog.html" class="btn btn-danger">
+Купить
+</a>
+
 </div>
+
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="product-card">
+
 <img src="Images/underarmour.jpg">
+
 <div class="p-3 text-center">
+
 <h5>Under Armour</h5>
+
 <p>
 <span class="sale-price">95 AZN</span>
 <span class="old-price">110 AZN</span>
 </p>
-<a href="catalog.html" class="btn btn-danger">Купить</a>
+
+<a href="catalog.html" class="btn btn-danger">
+Купить
+</a>
+
 </div>
+
 </div>
 </div>
 
 </div>
+
 </div>
 
 <!-- POPULAR -->
 <div class="container mt-5">
-<h3 class="mb-3">Популярные товары</h3>
+
+<h3 class="mb-4">
+Популярные товары
+</h3>
 
 <div class="row g-4">
 
 <div class="col-md-4">
 <div class="product-card">
+
 <img src="Images/nike.jpg">
+
 <div class="p-3 text-center">
+
 <h5>Nike Air Max</h5>
+
 <p>120 AZN</p>
+
 </div>
+
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="product-card">
+
 <img src="Images/adidas.jpg">
+
 <div class="p-3 text-center">
+
 <h5>Adidas Ultraboost</h5>
+
 <p>150 AZN</p>
+
 </div>
+
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="product-card">
+
 <img src="Images/puma.jpg">
+
 <div class="p-3 text-center">
+
 <h5>Puma RS-X</h5>
+
 <p>130 AZN</p>
+
 </div>
+
 </div>
 </div>
 
 </div>
+
 </div>
 
 <!-- FOOTER -->
@@ -260,24 +376,47 @@ footer a:hover{
 <div class="row">
 
 <div class="col-md-4 mb-3">
+
 <h5>SportShop</h5>
-<p>Магазин спортивной обуви и одежды.</p>
+
+<p>
+Магазин спортивной обуви и одежды.
+</p>
+
 </div>
 
 <div class="col-md-4 mb-3">
+
 <h5>Навигация</h5>
+
 <ul class="list-unstyled">
-<li><a href="index.html">Главная</a></li>
-<li><a href="catalog.html">Каталог</a></li>
-<li><a href="cart.html">Корзина</a></li>
+
+<li>
+<a href="index.html">Главная</a>
+</li>
+
+<li>
+<a href="catalog.html">Каталог</a>
+</li>
+
+<li>
+<a href="cart.html">Корзина</a>
+</li>
+
 </ul>
+
 </div>
 
 <div class="col-md-4 mb-3">
+
 <h5>Контакты</h5>
+
 <p>📞 +994 50 123 45 67</p>
+
 <p>📧 sportshop@gmail.com</p>
+
 <p>📍 Baku</p>
+
 </div>
 
 </div>
@@ -285,7 +424,9 @@ footer a:hover{
 <hr>
 
 <div class="text-center">
+
 © 2026 SportShop
+
 </div>
 
 </div>
