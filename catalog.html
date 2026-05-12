@@ -107,6 +107,7 @@ body {
 
 <body>
 
+<!-- NAV (НЕ ТРОГАЛ) -->
 <nav class="navbar navbar-dark bg-dark">
 <div class="container">
 
@@ -247,7 +248,7 @@ href="product.html?name=Puma%20RS-X&price=130&img=Images/puma.jpg">
 </div>
 </div>
 
-<!-- REEBOK (SALE) -->
+<!-- REEBOK -->
 <div class="col-md-4 mb-4 product reebok">
 <div class="card card-wrapper">
 <span class="sale-badge">SALE</span>
@@ -277,7 +278,7 @@ href="product.html?name=Reebok%20Classic&price=89&img=Images/reebok.jpg">
 </div>
 </div>
 
-<!-- NB (SALE) -->
+<!-- NB -->
 <div class="col-md-4 mb-4 product nb">
 <div class="card card-wrapper">
 <span class="sale-badge">SALE</span>
@@ -361,7 +362,8 @@ function addToCart(name,price,btn,img){
     requestAnimationFrame(()=>{
 
         fly.style.transform =
-        `translate(${end.x - start.left}px, ${end.y - start.top}px) scale(0.2)`;
+        `translate(${end.x - start.left}px, ${end.y - start.top}px)
+        scale(0.2)`;
 
         fly.style.opacity = "0";
 
