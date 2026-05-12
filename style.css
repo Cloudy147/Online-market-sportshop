@@ -1,6 +1,7 @@
 body {
     background-color: #f4f6f8;
     font-family: Arial, sans-serif;
+    transition: 0.3s;
 }
 
 /* карточки */
@@ -49,32 +50,34 @@ body {
     50% { transform: scale(1.4); }
     100% { transform: scale(1); }
 }
-/* DARK MODE */
+
+/* ================= DARK MODE ================= */
 
 .dark {
-    background:#121212 !important;
-    color:white;
+    background: #121212;
+    color: white;
 }
 
 .dark .card {
-    background:#1f1f1f;
-    color:white;
+    background: #1f1f1f;
+    color: white;
 }
 
 .dark .navbar {
-    background:#000 !important;
+    background: #000 !important;
 }
 
 .dark .btn-dark {
-    background:#333;
-    border-color:#333;
+    background: #333;
+    border-color: #333;
 }
 
 .dark .filter-btn.active {
-    background:white;
-    color:black;
+    background: white;
+    color: black;
 }
 
 .dark .card p,
 .dark .card h5 {
-    color:white;
+    color: white;
+}
